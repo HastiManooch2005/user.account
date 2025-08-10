@@ -25,7 +25,7 @@ class UserManager(BaseUserManager):
         return user
 
 
-class User(AbstractBaseUser):
+class MyUser(AbstractBaseUser):
     username = models.CharField(verbose_name='Username', max_length=100, unique=True)
     fullname = models.CharField(verbose_name='Full name', max_length=100)
     is_admin = models.BooleanField(default=False)

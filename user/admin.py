@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import Group
-from .models import User
+from .models import MyUser
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 # Register your models here.
@@ -35,7 +35,7 @@ class UserAdmin(BaseUserAdmin):
     ordering = ["fullname"]
     filter_horizontal = []
 
-admin.site.register(User, UserAdmin)
+admin.site.register(MyUser, UserAdmin)
 # ... and, since we're not using Django's built-in permissions,
 # unregister the Group model from admin.
 admin.site.unregister(Group)
